@@ -36,3 +36,12 @@ D:\projetos-C#\api\obj\Debug\net5.0\api.dll
 D:\projetos-C#\api\obj\Debug\net5.0\ref\api.dll
 D:\projetos-C#\api\obj\Debug\net5.0\api.pdb
 D:\projetos-C#\api\obj\Debug\net5.0\api.genruntimeconfig.cache
+D:\projetos-C#\api\bin\Debug\net5.0\Humanizer.dll
+D:\projetos-C#\api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\projetos-C#\api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\projetos-C#\api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\projetos-C#\api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\projetos-C#\api\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\projetos-C#\api\bin\Debug\net5.0\MySqlConnector.dll
+D:\projetos-C#\api\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\projetos-C#\api\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
