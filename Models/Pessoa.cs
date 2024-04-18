@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+namespace api.Models
+{
     public class Pessoa
     {
         [Key]
@@ -8,3 +10,4 @@ using System.ComponentModel.DataAnnotations;
         public int idade { get; set; }
 
     }
+}
