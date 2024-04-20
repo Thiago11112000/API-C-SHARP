@@ -4,6 +4,7 @@ using api.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using api.Models;
+using System.Data.Common;
 namespace api.Controllers
 {
     [Controller]
@@ -26,11 +27,19 @@ namespace api.Controllers
             return Created("Objeto pessoa", p);
         }
 
+
         [HttpGet("api")]
         public async Task <ActionResult> Listar ()
         {
           var dados = await  dc.pessoa.ToListAsync();
           return Ok(dados);
+        }
+
+        [HttpGet("api/{codigo}")]
+        public Pessoa filtrar(int codigo)
+        {
+         Pessoa p = dc.pessoa.Find(codigo);
+         return p;
         }
 
         [HttpGet("oi")]
