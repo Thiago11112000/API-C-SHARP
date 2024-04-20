@@ -1,3 +1,4 @@
+using System.Net;
 using System.Threading.Tasks;
 using api.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -23,6 +24,13 @@ namespace api.Controllers
             dc.pessoa.Add(p);
             await dc.SaveChangesAsync();
             return Created("Objeto pessoa", p);
+        }
+
+        [HttpGet("api")]
+        public async Task <ActionResult> Listar ()
+        {
+          var dados = await  dc.pessoa.ToListAsync();
+          return Ok(dados);
         }
 
         [HttpGet("oi")]
