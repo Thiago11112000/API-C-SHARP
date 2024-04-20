@@ -27,7 +27,6 @@ namespace api.Controllers
             return Created("Objeto pessoa", p);
         }
 
-
         [HttpGet("api")]
         public async Task <ActionResult> Listar ()
         {
@@ -41,6 +40,14 @@ namespace api.Controllers
          Pessoa p = dc.pessoa.Find(codigo);
          return p;
         }
+
+        [HttpPut("api")]
+         public async Task<ActionResult> editar([FromBody] Pessoa p)
+         {
+          dc.pessoa.Update(p);
+          await dc.SaveChangesAsync();
+          return Ok(p);
+         }
 
         [HttpGet("oi")]
         public string oi()
