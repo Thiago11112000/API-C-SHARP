@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using api.Models;
 using System.Data.Common;
+using System;
 namespace api.Controllers
 {
     [Controller]
@@ -20,7 +21,7 @@ namespace api.Controllers
 
 
             [HttpPost("api")]
-        public async Task <ActionResult> Cadastrar([FromBody] Pessoa p)
+        public async Task <ActionResult> cadastrar([FromBody] Pessoa p)
         {
             dc.pessoa.Add(p);
             await dc.SaveChangesAsync();
@@ -28,7 +29,7 @@ namespace api.Controllers
         }
 
         [HttpGet("api")]
-        public async Task <ActionResult> Listar ()
+        public async Task <ActionResult> listar ()
         {
           var dados = await  dc.pessoa.ToListAsync();
           return Ok(dados);
@@ -41,7 +42,19 @@ namespace api.Controllers
          return p;
         }
 
-        [HttpPut("api")]
+
+          [HttpDelete("api/{codigo}")]           
+            public async Task <ActionResult>remover(int codigo)
+             {
+              Pessoa p = filtrar(codigo);
+              if(p == null){
+                return NotFound();
+              }else{
+                dc.pessoa.Remove(p);
+                await dc.SaveChangesAsync();
+                return Ok();
+              }
+             }
          public async Task<ActionResult> editar([FromBody] Pessoa p)
          {
           dc.pessoa.Update(p);
